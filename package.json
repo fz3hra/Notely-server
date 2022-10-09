@@ -1,0 +1,23 @@
+{
+  "name": "notely_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js"
+  },
+  "author": "Umme Faatimah-Iz-Zaahra Mujore (fz3hra)",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "mongoose": "^6.6.5",
+    "nodemon": "^2.0.20"
+  }
+}
