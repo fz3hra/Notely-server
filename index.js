@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require ('mongoose');
+require("dotenv").config();
 
-const PORT = 3000;
+const PORT = 3000 || 8181;
 const app = express();
-const DB = "mongodb+srv://fz3hra:wireshun@cluster0.rati8al.mongodb.net/?retryWrites=true&w=majority";
 
 const authRouter = require("./routes/auth");
 
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(authRouter);
 
 // connnections
-mongoose.connect(DB).then(() => {
+mongoose.connect(process.env.DB).then(() => {
     console.log('Connection Successful');
 }).catch(e => console.log(e));
 
