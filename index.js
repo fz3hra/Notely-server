@@ -6,9 +6,11 @@ const PORT = 3000 || 8181;
 const app = express();
 
 const authRouter = require("./routes/auth");
+const todoRouter = require("./routes/todoRoute");
 
 app.use(express.json());
 app.use(authRouter);
+app.use(todoRouter);
 
 // connnections
 mongoose.connect(process.env.DB).then(() => {
