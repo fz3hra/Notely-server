@@ -9,7 +9,6 @@ async function todo_Controller (req, res) {
     });
     createTodo = await createTodo.save()
     res.send(createTodo);
-    res.json(createTodo);
     }
     catch(e){
         res.status(500).json({error: e.message});
