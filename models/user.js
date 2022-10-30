@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 const userSchema = mongoose.Schema({
     name: {
@@ -27,6 +28,9 @@ const userSchema = mongoose.Schema({
             },
             message: "Please enter a long password"
         }
+    },
+    images: {
+        type: Schema.Types.ObjectId, ref: 'Image',
     },
     type: {
         type: String,

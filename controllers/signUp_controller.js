@@ -3,7 +3,7 @@ const bcryptjs = require('bcryptjs');
 
 async function signUp_controller(req, res)  {
     try {
-        const {name, email, password} = req.body;
+        const {name, email, password, images} = req.body;
     // findOne is a promise
     const existingUser = await User.findOne({
         email
@@ -17,7 +17,8 @@ async function signUp_controller(req, res)  {
     let user = new User({
         email,
         password: hashPassword, 
-        name
+        name,
+        images
     });
     user = await user.save();
     res.json(user);
