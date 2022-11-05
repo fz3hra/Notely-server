@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 const todoSchema = mongoose.Schema({
     title: {
@@ -8,6 +9,9 @@ const todoSchema = mongoose.Schema({
     description: {
         required: false,
         type: String,
+    },
+    user_id: {
+        type: Schema.Types.ObjectId, ref: 'User',
     }
 });
 

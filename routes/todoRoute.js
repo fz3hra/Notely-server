@@ -4,12 +4,13 @@ const getTodo_controller = require("../controllers/todo/getTodo_controller");
 const idTodo_controller = require("../controllers/todo/idTodo_controller");
 const updateTodo_controller = require("../controllers/todo/updateTodo_controller");
 const deleteTodo_controller = require("../controllers/todo/deleteTodo_controller");
+const signIn_callback = require("../controllers/signIn_controller");
 
 const todoRouter = express.Router();
 
-todoRouter.get('/api/get-todos', getTodo_controller.getTodo_controller);
+todoRouter.get('/api/get-todos', signIn_callback.verifyToken, getTodo_controller.getTodo_controller);
 
-todoRouter.post('/api/createTodo', todo_Controller.todo_Controller);
+todoRouter.post('/api/createTodo', signIn_callback.verifyToken, todo_Controller.todo_Controller);
 
 todoRouter.get('/api/get-todos/:id', idTodo_controller.idTodo_controller);
 
